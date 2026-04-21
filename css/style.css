@@ -1,0 +1,176 @@
+/* ===== 기본 초기화 ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== CSS 변수 ===== */
+:root {
+    --primary: #4f46e5;       /* 포인트 색상 */
+    --primary-dark: #3730a3;  /* 버튼 hover 색상 */
+    --text: #1f2937;          /* 기본 텍스트 색상 */
+    --text-light: #6b7280;    /* 서브 텍스트 색상 */
+    --bg: #ffffff;            /* 배경 흰색 */
+    --border: #e5e7eb;        /* 테두리 색상 */
+}
+
+body {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    color: var(--text);
+    background-color: var(--bg);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ===== 로고 ===== */
+.logo a {
+    color: #4f46e5;
+    font-weight: bold;
+}
+
+/* ===== 공통 레이아웃 ===== */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ===== 네비게이션 바 ===== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+}
+
+.header .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+}
+
+/* 메뉴를 헤더 정중앙에 배치 */
+.nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 메뉴 리스트 */
+.nav-list {
+    display: flex;
+    gap: 36px;
+}
+
+.nav-list a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-light);
+    transition: color 0.2s;
+}
+
+.nav-list a:hover {
+    color: var(--primary);
+}
+
+/* ===== 서브 페이지 공통 (about, project, stack) ===== */
+.page-content {
+    padding-top: 96px;
+    padding-bottom: 80px;
+    min-height: 100vh;
+}
+
+/* ===== 본문 메인 섹션 ===== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 64px;
+    background: linear-gradient(135deg, #ede9fe 0%, #e0e7ff 100%);
+}
+
+.hero-sub {
+    font-size: 1.1rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--text);
+}
+
+.highlight {
+    color: var(--primary);
+}
+
+/* 버튼 묶음 */
+.hero-btns {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-outline {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+/* 애니메이션 */
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.hero-email {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: #6b7280;
+}
+
+.hero-sub   { animation: fadein 0.8s ease both 0s; }
+.hero-title { animation: fadein 0.8s ease both 0.6s; }
+.hero-btns  { animation: fadein 0.8s ease both 1.2s; }

@@ -1,0 +1,48 @@
+/* ===== 프로젝트 목록 페이지 (Project.html) ===== */
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 36px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.project-card {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    color: inherit;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 16px;
+}
+
+.card-info h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.card-info p {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
